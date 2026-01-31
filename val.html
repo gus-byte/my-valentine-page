@@ -1,201 +1,184 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2487.2">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-    span.s1 {font: 16.0px Helvetica; font-kerning: none; color: #ffffff; -webkit-text-stroke: 0px #ffffff}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+  <title>Be My Valentine? 💖</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #ffccd5, #ffb3c6);
+      min-height: 100dvh;
+      color: #333;
+      text-align: center;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+    h1 {
+      font-size: 3.8rem;
+      margin: 50px 20px 20px;
+      color: #ff3366;
+      text-shadow: 2px 2px 8px rgba(255,255,255,0.8);
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin: 30px auto;
+      max-width: 90%;
+      padding: 20px 0;
+    }
+    .gallery img {
+      width: 240px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      border: 8px solid white;
+      transform: rotate(-3deg);
+      transition: transform 0.4s;
+    }
+    .gallery img:nth-child(even) { transform: rotate(4deg); }
+    .gallery img:hover { transform: scale(1.08) rotate(0deg); }
+
+    .question {
+      font-size: 2.8rem;
+      margin: 40px 20px;
+      color: #c41e3b;
+    }
+    .buttons {
+      margin: 50px 0;
+      position: relative;
+      min-height: 150px; /* prevents layout jump when buttons move */
+    }
+    button {
+      font-size: 2.5rem;
+      padding: 20px 80px;
+      margin: 0 30px;
+      border: none;
+      border-radius: 60px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transition: all 0.4s ease;
+      position: relative;
+    }
+    #yesBtn {
+      background: #ff3366;
+      color: white;
+    }
+    #noBtn {
+      background: #6c757d;
+      color: white;
+    }
+    #yesBtn:hover { transform: scale(1.1); background: #e02e5c; }
+    #noBtn:hover { transform: scale(0.85); }
+
+    #success {
+      display: none;
+      font-size: 3.5rem;
+      margin: 80px 20px;
+      color: #ff3366;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    /* Floating hearts */
+    .float-heart {
+      position: absolute;
+      font-size: 3.5rem;
+      pointer-events: none;
+      animation: rise 12s linear infinite;
+      opacity: 0.85;
+      z-index: -1;
+    }
+    @keyframes rise {
+      0% { transform: translateY(120vh) rotate(0deg); }
+      100% { transform: translateY(-30vh) rotate(1080deg); }
+    }
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Be My Valentine? 💖&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>html, body {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: 'Arial', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(to bottom, #ffccd5, #ffb3c6);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>min-height: 100dvh;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: #333;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>overflow-y: auto;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>overflow-x: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>-webkit-overflow-scrolling: touch;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>h1 {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 3.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 50px 20px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: #ff3366;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-shadow: 2px 2px 8px rgba(255,255,255,0.8);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.gallery {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 25px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 30px auto;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: 90%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.gallery img {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 240px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 300px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>object-fit: cover;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 12px 30px rgba(0,0,0,0.25);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 8px solid white;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transform: rotate(-3deg);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: transform 0.4s;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.gallery img:nth-child(even) { transform: rotate(4deg); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.gallery img:hover { transform: scale(1.08) rotate(0deg); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.question {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 2.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 40px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: #c41e3b;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.buttons {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 50px 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>min-height: 150px; /* prevents layout jump when buttons move */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>button {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px 80px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 30px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 60px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 10px 25px rgba(0,0,0,0.3);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: all 0.4s ease;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>#yesBtn {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: #ff3366;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>#noBtn {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: #6c757d;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>#yesBtn:hover { transform: scale(1.1); background: #e02e5c; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>#noBtn:hover { transform: scale(0.85); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>#success {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 3.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 80px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: #ff3366;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>animation: pulse 2s infinite;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>@keyframes pulse {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>0% { transform: scale(1); }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>50% { transform: scale(1.1); }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>100% { transform: scale(1); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Floating hearts */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.float-heart {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 3.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>pointer-events: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>animation: rise 12s linear infinite;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>opacity: 0.85;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>z-index: -1;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>@keyframes rise {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>0% { transform: translateY(120vh) rotate(0deg); }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>100% { transform: translateY(-30vh) rotate(1080deg); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Hey my love... 💕&lt;/h1&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="gallery"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Replace these with your real photo links (upload to imgur.com, postimages.org, etc.) --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;img src="<span class="s1">https://imgur.com/h1IivbJ</span>" alt="Us"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;img src="<span class="s1">https://imgur.com/7YRUaN2</span>" alt="Us"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Add more if you want --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="question"&gt;Will you be my Valentine? ❤️&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="buttons"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button id="yesBtn" onclick="yesClick()"&gt;YES! 😍&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button id="noBtn" onclick="noClick()"&gt;NO 😔&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="success"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>YAYYY! I knew you'd say yes! 💖&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>I love you more than words can say! Let's make this the best year ever 🎉</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>let noClicks = 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const yesBtn = document.getElementById('yesBtn');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const noBtn = document.getElementById('noBtn');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const success = document.getElementById('success');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function noClick() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>noClicks++;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>// Yes grows</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const scale = 1.2 + noClicks * 0.35;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>yesBtn.style.transform = `scale(${scale})`;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>yesBtn.style.padding = `${20 + noClicks*10}px ${80 + noClicks*20}px`;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>// No shrinks &amp; moves</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const noScale = Math.max(0.4, 0.9 - noClicks * 0.12);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>noBtn.style.transform = `scale(${noScale})`;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>noBtn.style.marginLeft = (Math.random() * 180 - 90) + 'px';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>noBtn.style.marginTop<span class="Apple-converted-space">  </span>= (Math.random() * 120 - 60) + 'px';</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>if (noClicks &gt; 4) {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>noBtn.innerText = "Stop resisting! 😏";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if (noClicks &gt; 7) {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>noBtn.style.display = 'none';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function yesClick() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>success.style.display = 'block';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.querySelector('.buttons').style.display = 'none';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.querySelector('.question').style.display = 'none';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>// Burst of hearts</p>
-<p class="p1"><span class="Apple-converted-space">      </span>for (let i = 0; i &lt; 30; i++) {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>setTimeout(createHeart, i * 80);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function createHeart() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const heart = document.createElement('div');</p>
-<p class="p1"><span class="Apple-converted-space">      </span>heart.className = 'float-heart';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>heart.innerText = ['❤️','💕','💖','💗','💞'][Math.floor(Math.random()*5)];</p>
-<p class="p1"><span class="Apple-converted-space">      </span>heart.style.left = Math.random() * 100 + 'vw';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>heart.style.animationDuration = (Math.random() * 6 + 8) + 's';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>heart.style.fontSize = (Math.random() * 2 + 2) + 'rem';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.body.appendChild(heart);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>setTimeout(() =&gt; heart.remove(), 15000);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Start floating hearts</p>
-<p class="p1"><span class="Apple-converted-space">    </span>setInterval(createHeart, 600);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+  <h1>Hey my love... 💕</h1>
+
+  <div class="gallery">
+    <!-- Replace these with your real photo links (upload to imgur.com, postimages.org, etc.) -->
+    <img src="https://imgur.com/h1IivbJ" alt="Us">
+    <img src="https://imgur.com/7YRUaN2" alt="Us">
+    <!-- Add more if you want -->
+  </div>
+
+  <div class="question">Will you be my Valentine? ❤️</div>
+
+  <div class="buttons">
+    <button id="yesBtn" onclick="yesClick()">YES! 😍</button>
+    <button id="noBtn" onclick="noClick()">NO 😔</button>
+  </div>
+
+  <div id="success">
+    YAYYY! I knew you'd say yes! 💖<br>
+    I love you more than words can say! Let's make this the best year ever 🎉
+  </div>
+
+  <script>
+    let noClicks = 0;
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const success = document.getElementById('success');
+
+    function noClick() {
+      noClicks++;
+      // Yes grows
+      const scale = 1.2 + noClicks * 0.35;
+      yesBtn.style.transform = `scale(${scale})`;
+      yesBtn.style.padding = `${20 + noClicks*10}px ${80 + noClicks*20}px`;
+
+      // No shrinks & moves
+      const noScale = Math.max(0.4, 0.9 - noClicks * 0.12);
+      noBtn.style.transform = `scale(${noScale})`;
+      noBtn.style.marginLeft = (Math.random() * 180 - 90) + 'px';
+      noBtn.style.marginTop  = (Math.random() * 120 - 60) + 'px';
+
+      if (noClicks > 4) {
+        noBtn.innerText = "Stop resisting! 😏";
+      }
+      if (noClicks > 7) {
+        noBtn.style.display = 'none';
+      }
+    }
+
+    function yesClick() {
+      success.style.display = 'block';
+      document.querySelector('.buttons').style.display = 'none';
+      document.querySelector('.question').style.display = 'none';
+      // Burst of hearts
+      for (let i = 0; i < 30; i++) {
+        setTimeout(createHeart, i * 80);
+      }
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'float-heart';
+      heart.innerText = ['❤️','💕','💖','💗','💞'][Math.floor(Math.random()*5)];
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 6 + 8) + 's';
+      heart.style.fontSize = (Math.random() * 2 + 2) + 'rem';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 15000);
+    }
+
+    // Start floating hearts
+    setInterval(createHeart, 600);
+  </script>
+
 </body>
 </html>
